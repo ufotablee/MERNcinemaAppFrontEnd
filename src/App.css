@@ -1,0 +1,714 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,900&display=swap");
+.App {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  position: relative;
+  font-family: "Nunito", sans-serif;
+}
+p {
+  font-weight: bold;
+}
+.cinemaItem {
+  cursor: pointer;
+  display: flex;
+  position: absolute;
+  right: 2%;
+}
+.cinemas {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
+  min-height: 5vh;
+  background-color: #393939;
+}
+.cinemaItemSvg:hover {
+  fill: red;
+}
+.cinemasModalSvg {
+  position: absolute;
+  right: 0;
+  margin: 10px;
+}
+.cinemasModalSvg:hover {
+  fill: red;
+  cursor: pointer;
+}
+.cinemasAreas {
+  background-color: #393939;
+  padding-top: 75px !important;
+  padding: 50px;
+}
+.cinemaLogo {
+  cursor: pointer;
+  display: flex;
+
+  position: absolute;
+  left: 2%;
+}
+.cinemaLogo svg {
+  fill: white;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-self: center;
+}
+.cinemasAreas p {
+  color: white;
+  cursor: pointer;
+}
+
+.cinemasAreas hr {
+  color: white;
+  border-width: 4px;
+}
+.activeArea {
+  color: red !important;
+}
+.cinemasItems hr {
+  border-width: 4px;
+}
+.cinemasItems p {
+  cursor: pointer;
+}
+.cinemasItems {
+  padding-top: 75px !important;
+  padding: 50px;
+}
+.cinemasModal {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 22px;
+  grid-row-gap: 0px;
+  position: absolute;
+  right: 0;
+  transform: translateX(100%);
+  top: 0;
+  transition: transform 0.5s;
+  z-index: 2;
+  background: white;
+  width: 40vw;
+  height: 100vh;
+
+  box-shadow: 0px 0px 8px rgba(0, 0.6, 0, 0.6);
+}
+.showModal {
+  transform: translateX(0);
+}
+.cinemaItem p {
+  margin: 0;
+  margin-right: 15px;
+  text-align: center;
+  font-size: 25px;
+}
+.cinemaItemName {
+  color: white;
+}
+.cinemaItemBtn {
+  width: 30px;
+  height: 30px;
+  background-color: aliceblue;
+  border-radius: 50%;
+}
+
+.carouselArrowRight {
+  position: absolute;
+  top: 50%;
+  left: 96%;
+  background-color: red;
+  width: 80px;
+  border-radius: 50%;
+  height: 80px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carouselArrowLeft {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 0.5%;
+  background-color: red;
+  width: 80px;
+  border-radius: 50%;
+  height: 80px;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+}
+.carouselArrowRight svg {
+  font-size: 40px;
+  fill: white;
+}
+.carouselArrowLeft svg {
+  font-size: 40px;
+  fill: white;
+}
+
+.carouselItem {
+  width: 500px;
+  position: relative;
+}
+.cinemaItem {
+  align-items: center;
+  justify-content: center;
+}
+.carouselBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+}
+.carouselBg::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
+}
+.carouselInfo {
+  display: none;
+  text-align: center;
+  position: absolute;
+  color: white;
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  top: 0;
+  left: 0;
+  background: rgba(23, 15, 25, 0.4);
+}
+.carouselInfoSessionsName {
+  font-size: 25px;
+}
+.carouselInfo .carouselInfoBody {
+  position: absolute;
+  top: 35%;
+  text-align: center;
+  width: 100%;
+}
+.cinemasAdd {
+  position: absolute;
+  right: 0;
+  bottom: 10%;
+  margin: 20px;
+}
+.cinemasBtn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 20px;
+}
+.cinemasAddBtn {
+  position: absolute;
+  right: 0;
+  bottom: 5%;
+  margin: 20px;
+}
+.carouselInfoDetailed {
+  display: flex;
+  margin: 20px;
+}
+.carouselInfoDetailed p {
+  font-size: 14px;
+}
+.carouselInfoDetailedInfo {
+  margin-top: 70px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  text-align: center;
+  justify-content: space-evenly;
+}
+.carouselInfoDetailedInfoIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: gray;
+}
+
+.carouselName:hover {
+  cursor: pointer;
+  color: red;
+}
+.carouselName {
+  position: absolute;
+  color: white;
+  font-size: 30px;
+  bottom: 5%;
+  width: 100%;
+  text-align: center;
+}
+
+.carouselItem:hover .carouselBg {
+  filter: blur(2px);
+}
+.carouselItem:hover .carouselInfo {
+  display: block !important;
+}
+
+.carouselBlock {
+  width: 6060px;
+  background-color: #393939;
+  transition: 0.4s;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  z-index: 0;
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #393939;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.moviePage {
+  padding-left: 20%;
+  padding-right: 20%;
+  display: flex;
+  justify-content: center;
+  background-color: #393939;
+  min-width: 100vw;
+  min-height: 100vh;
+  padding-top: 100px;
+}
+.moviePage p {
+  color: white;
+  margin-bottom: 2px;
+}
+
+.moviePageInfoContent {
+  display: flex;
+}
+.moviePageInfoContentRight {
+  margin-left: 40px;
+}
+.moviePageInfoContentRight p {
+  color: gray;
+}
+.moviePageImg {
+  border-radius: 30px;
+  width: 250px;
+  height: 369px;
+  background-size: cover;
+  background-position: center;
+}
+.moviePageInfoDesc {
+  margin-top: 40px;
+}
+.moviePageBtn {
+  display: flex;
+  justify-content: center;
+}
+.footerSessionsTime a {
+  text-decoration: none;
+}
+.moviePage .btn {
+  width: 230px;
+}
+.moviePageInfoName {
+  font-size: 50px;
+}
+.moviePageImg button {
+  margin-top: 10px;
+}
+.moviePageInfo {
+  flex-grow: 1;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.moviePageSession {
+  flex-grow: 0.5;
+}
+.sessions {
+  min-width: 300px;
+  border-radius: 20px;
+  height: 700px;
+}
+
+.headerSessions {
+  background-color: #5c5c5c;
+  height: 122px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px 10px 0px 0px;
+}
+.headerSessions p {
+  font-size: 25px;
+}
+.footerSessions {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-color: #504d4d;
+}
+.footerSessionsTime {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+.footerSessionsTime div {
+  margin-right: 15px;
+}
+.footerSessionsTime p {
+  color: red;
+  cursor: pointer;
+}
+.footerSessionsTime p:hover {
+  color: white;
+}
+.footerSessionsItem {
+  margin-bottom: 15px;
+}
+.footerSessionsItemName p:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.modalMovieCardImg {
+  width: 100px;
+  height: 150px;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  margin-right: 10px;
+}
+
+.modalMovieCard {
+  display: flex;
+}
+
+.modalMovieCards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+.sessionBtn {
+  margin-top: 10px;
+}
+.sessionBtnContainer {
+  display: flex;
+  justify-content: center;
+}
+.sessionsInfo {
+  display: flex;
+}
+.sessionsInfoImg {
+  margin-right: 20px;
+  width: 180px;
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+}
+.sessionsInfoContentBody {
+  display: flex;
+}
+.sessionsInfoContentName {
+  font-size: 22px;
+}
+.sessionsInfoContentBodyHall {
+  display: flex;
+  border: 1px solid #b9b9b9;
+  border-radius: 5px;
+  margin-right: 10px;
+  min-width: 200px;
+}
+.sessionsInfoContentBodyHallIcon {
+  background-color: #b9b9b9;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sessionsInfoContentBodyHallIcon svg {
+  color: black;
+}
+.sessionsInfoContentBodyHallInfoHeader {
+  text-align: center;
+}
+.sessionsInfoContentBodyHallInfo {
+  color: black;
+  background-color: white;
+  font-size: 15px;
+  width: 100%;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.sessionsInfoContentBodyHallInfoName {
+  font-weight: bold;
+}
+.sessionsInfoContentBodyHallInfoName {
+  text-align: center;
+}
+.sessionBody {
+  display: flex;
+  flex-direction: column;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #434141;
+  padding-top: 80px;
+  padding-left: 20px;
+  color: white;
+}
+.sessionHall {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+.sessionHallTop div {
+  text-align: center;
+}
+.sessionHallPriceIcon {
+  border: 1px solid #61dafb;
+  border-radius: 5px;
+  background-color: #61dafb;
+  width: 20px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.sessionHallPricesBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+.sessionHallPrices {
+  display: flex;
+  justify-content: center;
+}
+.sessionHallPriceIconRed {
+  border: 1px solid red;
+  border-radius: 5px;
+  background-color: red;
+  width: 20px;
+  height: 30px;
+  margin-right: 5px;
+}
+.sessionHallBody {
+  display: flex;
+  justify-content: center;
+}
+
+.Good {
+  width: 20px;
+  height: 28px;
+  border: 1px solid #61dafb;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
+.Lux {
+  width: 20px;
+  height: 28px;
+  border: 1px solid red;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
+.Lux:hover {
+  background-color: red;
+}
+.Good:hover {
+  background-color: #61dafb;
+}
+.disabled {
+  background-color: #b9aeae;
+  pointer-events: none;
+  text-align: center;
+}
+.sessionHallBodyGood {
+  display: grid;
+  margin-top: 100px;
+  grid-template-columns: repeat(14, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+.Good:hover .tooltiptext {
+  visibility: visible;
+}
+.Lux:hover .tooltiptext {
+  visibility: visible;
+}
+.tooltiptext {
+  width: 150px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  visibility: hidden;
+}
+.tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+  margin-left: -5px;
+  border-width: 5px;
+}
+.tickets {
+  position: absolute;
+  top: 5%;
+  right: 0;
+  min-width: 500px;
+  height: 95vh;
+  background-color: #585656;
+  padding: 20px;
+}
+
+.tiketsStats {
+  display: flex;
+  justify-content: space-between;
+}
+.tiketsName {
+  font-size: 25px;
+}
+.tiket {
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.tiket div {
+  display: flex;
+}
+.tiket p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+.tiket svg {
+  cursor: pointer;
+}
+.selected {
+  background-color: #58cbea;
+}
+.selected-lux {
+  background-color: red;
+}
+.ticketBtn {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+.watchAlso {
+  margin-top: 100px;
+}
+.watchAlsoItemImg {
+  border-radius: 5px;
+  width: 150px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+.watchAlsoContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+.watchAlsoItem:hover p {
+  color: red;
+}
+.watchAlsoItem {
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+}
+.watchAlsoItemName {
+  margin-top: 10px;
+  max-width: 150px;
+  text-align: center;
+}
+.watchAlsoHeader {
+  font-size: 25px;
+}
+.watchAlsoContainer a {
+  text-decoration: none;
+}
+.dateSelect {
+  width: 230px !important;
+}
+.dateSelectDiv {
+  display: flex;
+  justify-content: center;
+}
+.carouselInfoSessions .footerSessionsTime a {
+  font-size: 18px;
+}
+.carouselInfoSessions .footerSessionsTime a div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+}
+.carouselInfoSessions .footerSessionsTime a div p {
+  margin: 0px;
+}
+.carouselInfoSessions .footerSessionsTime {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
